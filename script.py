@@ -1,4 +1,14 @@
-import os, magic, uuid, shutil
+import os, magic, uuid, shutil, sys
+
+if len(sys.argv) > 1:
+    path = sys.argv[1]
+else:
+    path = './'
+
+if len(sys.argv) > 2:
+    quality = sys.argv[2]
+else:
+    quality = 75
 
 
 def optimizeImage(originalPath):
@@ -30,4 +40,4 @@ def processDir(dir):
     print('Complete for ' + str(count) + ' images')
 
 
-processDir('./')    
+processDir(path)
